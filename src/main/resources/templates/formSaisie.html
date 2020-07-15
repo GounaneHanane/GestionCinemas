@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+
+<head>
+	<meta charset="utf-8">
+	<title>Film | Ajouter</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+	<script src="/webjars/jquery/3.5.0/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/4.1.0/bootstrap.min.js"></script>
+
+<body>
+
+	<div layout:fragment="pageContent">
+	<div class="container">
+			<div style="margin:2%">
+			<div class="card ">
+				<div class="card-header">Ajouter un Film</div>
+				<div class="card-body">
+					<table class="table">
+						<form th:action="@{saveFilm2}" method="post" th:object="${film}" enctype="multipart/form-data">
+
+							<tr>
+								<td>
+									<label class="control-label">Titre :</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" th:field="*{titre}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">Description :</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" th:field="*{description}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">Realisateur :</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" th:field="*{realisateur}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">Date de Sortie :</label>
+								</td>
+								<td>
+									<input type="date" class="form-control" th:field="*{dateSortie}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">Durée:</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" th:field="*{duree}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">Imgae :</label>
+								</td>
+								<td>
+									<input type="file" class="form-control" name="picture" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="control-label">categorie:</label>
+								</td>
+								<td>
+									<input type="text" name="name" class="form-control" th:field="*{categorie.id}" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan=2>
+									<button type="submit" class="btn btn-primary">Ajouter</button></td>
+							</tr>
+						</form>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+
+<head>
+	<meta charset="utf-8">
+	<title>Cinema | Ajouter</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+	<script src="/webjars/jquery/3.5.0/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/4.1.0/bootstrap.min.js"></script>
+
+<body>
+	<div layout:fragment="pageContent">
+
+		<div class="container">
+			<div style="margin:2%">
+
+				<div class="card ">
+					<div class="card-header">Ajouter Cinema</div>
+					<div class="card-body">
+						<table class="table">
+							<form th:action="@{saveCinema}" method="post" th:object="${Cinema}"
+								enctype="multipart/form-data">
+								<tr>
+
+										<td>
+											<label class="control-label">Nom :</label>
+										</td>
+										<td>
+											<input type="text" class="form-control" th:field="*{name}" />
+										</td>
+								
+								</tr>
+								<tr>
+
+
+									
+										<td>
+											<label class="control-label">Longitude :</label>
+										</td>
+										<td>
+											<input type="text" class="form-control" th:field="*{longitude}" />
+										</td>
+
+									
+								</tr>
+								<tr>
+									
+										<td>
+											<label class="control-label">Latitude :</label>
+										</td>
+										<td>
+											<input type="text" class="form-control" th:field="*{latitude}" />
+										</td>
+									
+								</tr>
+								<tr>
+									
+										<td>
+											<label class="control-label">Altitude :</label>
+										</td>
+										<td>
+											<input type="text" class="form-control" th:field="*{altitude}" />
+										</td>
+
+								</tr>
+								<tr>
+									<td>
+											<label class="control-label">Nombre des salles :</label>
+										</td>
+										<td>
+											<input type="text" class="form-control" th:field="*{nombreSalles}" />
+										</td>
+								</tr>
+								<tr>
+								
+										<td>
+											<label class="control-label">Ville :</label>
+										</td>
+										<td>
+											<input type="text" name="ville" class="form-control"
+												th:field="*{ville.id}" />
+										</td>
+									
+								</tr>
+								<tr>
+										<td colspan=2>
+											<button type="submit" class="btn btn-primary">save</button>
+										</td>
+									
+							</form>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8">
+<title>Salle | Ajouter</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+<script src="/webjars/jquery/3.5.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.0/bootstrap.min.js"></script>
+<body>
+	<div layout:fragment="pageContent">
+<div class="container">
+			<div style="margin:2%">
+			<div class="card ">
+				<div class="card-header">Ajouter une salle</div>
+				<div class="card-body">
+					<form th:action="@{SaveSalle}" method="post" th:object="${salle}"
+						enctype="multipart/form-data">
+
+						<div class="form-group">
+							<label class="control-label">Nom :</label> <input type="text"
+								class="form-control" th:field="*{name}" />
+
+						</div>
+						<div class="form-group">
+							<label class="control-label">Nombre de places :</label> <input
+								type="text" class="form-control" th:field="*{nombrePlace}" />
+
+						</div>
+						<div class="form-group">
+							<label class="control-label">Cinema :</label> <input type="text"
+								class="form-control" th:field="*{cinema.id}" />
+
+						</div>
+					
+
+							<button type="submit" class="btn btn-success">Ajouter</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</body>
+</html>

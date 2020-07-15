@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Cinema</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+<script src="/webjars/jquery/3.5.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.0/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Cinemas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a style="font-size: 20PX;" class="navbar-brand"
+				th:href="@{listCinema}"><strong>Cinemas </strong></a>
+      </li>
+      <li class="nav-item">
+       <a style="font-size: 20PX;" class="navbar-brand"
+				th:href="@{listFilm}"> <strong>Films</strong></a>
+      </li>
+      <li class="nav-item">
+        	<a style="font-size: 20PX;" class="navbar-brand" th:href="@{listCategorie}"> <strong>Categories</strong></a>
+      </li>
+      <li class="nav-item">
+        	<a style="font-size: 20PX;" class="navbar-brand"
+				th:href="@{listSalle}"> <strong>Salles</strong></a>
+      </li>
+      <li class="nav-item">
+        	<a style="font-size: 20PX;" class="navbar-brand"
+				th:href="@{listProjection}"> <strong>Projections</strong></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+	<section layout:fragment="pageContent"></section>
+	<section layout:fragment="pageContent1"></section>
+
+</body>
+</html>
